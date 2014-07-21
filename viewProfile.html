@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>INF5750Social App - View Profile ...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<div id="fb-root"></div>
+    <script>
+     window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '244275442397389',                        // App ID from the app dashboard
+                channelUrl : 'http://apps.dhis2.org/apps/SocialApp/channel.html', // Channel file for x-domain comms
+                status     : true,                                 // Check Facebook Login status
+                cookie     : true, // enable cookies to allow the server to access the session
+                xfbml      : true                                 // Look for social plugins on the page
+
+                // appId      : '113455642165175', // App ID
+
+            });
+        
+	FB.getLoginStatus(function(response){
+	//document.getElementById("imageID").src = "https://graph.facebook.com/"+response.authResponse.userID+"/picture"
+
+	document.getElementById("userID").value = response.authResponse.userID;
+	FB.api('/me/picture?type=normal', function(response) {
+        var str="<div class='circle' style='background-image:url("+response.data.url+")'></div>";
+	  	  document.getElementById("status").innerHTML+=str;
+	});
+        saveFaceBookId(response.authResponse.userID);
+	});
+    };
+    (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/all.js#status=0";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+</script>
+
+	<script src="js/assignment.js"></script>
+<script>
+    $(document).ready(function() {
+        getProfileData();
+    });
+</script>
+
+</head>
+<body>
+<div class="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="logo">
+        <h1><a href="index.html"><span>TechEnvaderz </span>Social</a></h1>
+      </div>
+      <div class="clr"></div>
+      <div class="social-holder">
+        <div class="wrap">
+            <a class="mobile-contact" href="mailto:gurung.sijan@gmail.com?Subject=Hello%20inf5750Social">
+                <img src="images/social-contact.png"></a>
+            <a class="twitter" href="https://twitter.com/gurungsiz" target="_blank">
+                <img src="images/social-twitter.png"></a>
+            <a class="facebook" href="https://www.facebook.com/techenvaderz" target="_blank">
+                <img src="images/social-facebook.png">
+            </a><a class="facebook" href="https://plus.google.com/u/0/+sijangurung/" target="_blank">
+            <img src="images/gplus.png"></a>
+        </div>
+      </div>
+      <div class="menu_nav">
+          <ul >
+              <li><a href="index.html"s>Welcome</a></li>
+              <li class="active"><a href="viewProfile.html" >Profile</a></li>
+              <li><a href="interpretations.html" >Interpretations</a></li>
+              <li><a href="extras.html">Extras</a></li>
+          </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="hbg"><img src="images/header_images.jpg" width="90%" height="18%" alt="" /></div>
+    </div>
+    <div class="content" id="content">
+      <div class="content_bg" style="padding: 0 10%; width: 81%">
+
+        <div class="mainbar" id="mainbar" style="overflow-y:hidden">
+		<!-- upto here is the main part....bottom part is only the different.... .-->
+
+<form action="">
+<fieldset style="border: hidden; ">
+
+<table border="0px">
+	<tr>
+		<td width="50%">
+			Name:
+		</td>
+		<td>
+		<input id="name" value=""  readonly="readonly"/> </td>
+	 </tr>
+	<tr>
+		<td width="50%">
+			User ID(Facebook):
+		</td>
+		<td>
+		<input id="userID" value="" readonly="readonly"/> </td>
+	 </tr>
+	<tr>
+		<td width="50%">
+			Introduction:
+		</td>
+		<td>
+		<input id="intro" value=""  readonly="readonly"/> </td>
+	 </tr>
+
+	<tr>
+		<td width="50%">
+			Employed at:
+		</td>
+		<td>
+		<input id="employedAt" value=""  readonly="readonly"/> </td>
+	 </tr>
+
+	<tr>
+		<td width="50%">
+			Education:
+		</td>
+		<td>
+		<input id="education" value=""  readonly="readonly"/> </td>
+	 </tr>
+
+	<tr>
+		<td width="50%">
+			Interested in:
+		</td>
+		<td>
+		<input id="interests" value=""  readonly="readonly"/> </td>
+	 </tr>
+
+	<tr>
+		<td width="50%">
+			Nationality:
+		</td>
+		<td>
+		<input id="nationality" value=""  readonly="readonly"/> </td>
+	 </tr>
+
+	<tr>
+		<td width="50%">
+			Birthday:
+		</td>
+		<td>
+		<input id="birthday" value=""  readonly="readonly"/> </td>
+	 </tr>
+
+	<tr>
+		<td width="50%">
+			Gender:
+		</td>
+		<td>
+		<input id="gender" value=""  readonly="readonly"/> </td>
+	 </tr>
+
+	<tr>
+		<td width="50%">
+			Speaks:
+		</td>
+		<td>
+		<input id="speaks" value=""  readonly="readonly"/> </td>
+	 </tr>
+
+	<tr>
+		<td width="50%">
+			Email:
+		</td>
+		<td>
+		<input id="email" value=""  readonly="readonly"/> </td>
+	 </tr>
+
+	<tr>
+		<td width="50%">
+			Phone Number:
+		</td>
+		<td>
+		<input id="phoneNumber" value=""  readonly="readonly"/> </td>
+	 </tr>
+
+	<tr>
+		<td width="50%">
+			Org Units:
+		</td>
+		<td>
+		<input id="orgUnits" value=""  readonly="readonly"/> </td>
+	 </tr>
+
+	<tr>
+		<td width="50%">
+			User roles:
+		</td>
+		<td>
+		<input id="userRoles" value=""  readonly="readonly"/> </td>
+	 </tr>
+
+	 <tr>
+		<td colspan="2" style="text-align: right">
+			<button id="btn_action" type="button" onclick="window.open('editProfile.html','_self')" >Edit Profile</button>
+		</td>
+	 </tr>
+
+</table>
+</fieldset>
+
+</form>
+
+<!-- Now again comes the index remaining part...-->
+</div>
+      </div>
+        <div class="sidebar">
+            <div class="gadget">
+                <h2 class="star"><span>User</span> Profile</h2>
+                <div class="clr"></div>
+                <div id="status">
+                    <!-- HERE COMES THE USER IMAGE.....--></div>
+            </div>
+
+          <div class="gadget" style="width:100%">
+            <h2 class="star"><span></span></h2>
+            <div class="clr"></div>
+          </div>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fbg">
+    <div class="fbg_resize">
+
+        <div class="col c1">
+        <h2><span>Likes</span></h2>
+<div class="fb-like-box" data-href="https://www.facebook.com/techenvaderz" data-width="270" data-height="100" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+</div>
+        </div>
+
+      <div class="col c3">
+        <h2><span>About</span></h2>
+        <p> Please Visit Our wiki group page.... <a href="#">click here...</a></p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+<div class="footer">
+  <div class="footer_resize">
+    <p class="lf">&copy; Copyright <a href="#">TechEnvaderz Group</a>.</p>
+    <div class="clr"></div>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html
+xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>INF5750Social App - Interpretations ...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> <link
+href="style.css" rel="stylesheet" type="text/css" />
+
+<link href="interpretations.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script
+type="text/javascript" src="js/script.js"></script> <script
+type="text/javascript" src="js/cufon-yui.js"></script> <script
+type="text/javascript" src="js/arial.js"></script> <script
+type="text/javascript" src="js/cuf_run.js"></script>
+
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<div id="fb-root"></div>
+ 
+    <script>
+	    $(document).ready(function() {
+
+	    });
+
+     window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '240732082752389',                        // App ID from the app dashboard
+          channelUrl : 'http://localhost:8080/SocialApp/facebook/channel.html', // Channel file for x-domain comms
+          status     : true,                                 // Check Facebook Login status
+         cookie     : true, // enable cookies to allow the server to access the session
+          xfbml      : true                                 // Look for social plugins on the page
+          
+         // appId      : '113455642165175', // App ID
+    
+        });
+    };
+	(function(d, s, id) {
+	      var js, fjs = d.getElementsByTagName(s)[0]; if
+	      (d.getElementById(id)) return; js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
+	      fjs.parentNode.insertBefore(js, fjs);
+	    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+</head> <body >
+    <body>
+<div class="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="logo">
+	<h1><a href="#"><span>TechEnvaderz </span>Social</a></h1>
+      </div> <div class="clr"></div>
+        <div class="social-holder">
+            <div class="wrap">
+                <a class="mobile-contact" href="mailto:gurung.sijan@gmail.com?Subject=Hello%20inf5750Social">
+                    <img src="images/social-contact.png"></a>
+                <a class="twitter" href="https://twitter.com/gurungsiz" target="_blank">
+                    <img src="images/social-twitter.png"></a>
+                <a class="facebook" href="https://www.facebook.com/techenvaderz" target="_blank">
+                    <img src="images/social-facebook.png">
+                </a><a class="facebook" href="https://plus.google.com/u/0/+sijangurung/" target="_blank">
+                <img src="images/gplus.png"></a>
+            </div>
+        </div>
+
+    <div class="menu_nav">
+        <ul >
+            <li><a href="index.html"s>Welcome</a></li>
+            <li><a href="viewProfile.html" >Profile</a></li>
+            <li class="active"><a href="interpretations.html" >Interpretations</a></li>
+            <li><a href="extras.html">Extras</a></li>
+        </ul>
+	<div class="clr"></div>
+      </div> <div class="hbg"><img src="images/header_images.jpg" width="90%"
+      height="18%" alt="" /></div>
+    </div>
+<!-- here is from the index page.... -->
+
+    <div class="parentDiv" id="parentDiv" style="border: 0px; width:77%; padding: 0 11.7%">
+	<div id="hiddenBox">
+	    <div style="float: left">
+		<img id="userProfilePic" class="image" src="loading.gif">
+	    </div>
+
+	    <div style="border: 0px; margin-bottom: 20px">
+		<a id ="postUserProfileLink" href="http://www.facebook.com" target="_blank" title="Go to user's facebook profile">
+		    <b>
+			<label id="postUser" style="color: darkblue; text-align:
+			right">
+			    ---
+			</label>
+		    </b>
+		</a>
+
+		<!--<Button id="postOnFacebookBtn" style="float: right">Share on
+		Facebook</Button>--> <!--Got this code from
+		www.simplesharebuttons.com-->
+        <a class="share-buttons" id="fbShareBtn" href="#" target="#"
+		onClick="shareOnFacebook(this.id)" title="Share on Facebook">
+		    <img
+		    src="http://www.simplesharebuttons.com/images/somacro/facebook.png"
+		    alt="Facebook" />
+		</a>
+
+		<br /> <label id="postDate" style="color: cornflowerblue;
+		text-align: right; font-size: 13px">
+
+		</label>
+	    </div>
+		<!-- Facebook -->
+
+	    <div style="border: 0px">
+		<label id="postText" style="color: #222222; text-align: right;
+		font-size: 16px">
+
+		</label>
+	    </div>
+
+	    <div>
+         <a id="postNativeUrl" href="" title="Click to view in the native app" target="_blank">
+		    <img id="postImg" src="loading.gif" width="100%" height="100%">
+         </a>
+	    </div>
+	</div>
+    </div>
+
+	
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script
+	src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/interpretations.js"></script>
+    <script>
+	$(document).ready(pageReady());
+    </script>
+    <!-- upto here is the cppied from index ... -->
+<div class="fbg">
+    <div class="fbg_resize">
+	
+	<div class="col c1"> <h2><span>Likes</span></h2>
+<div class="fb-like-box" data-href="https://www.facebook.com/techenvaderz"
+data-width="270" data-height="100" data-colorscheme="light"
+data-show-faces="true" data-header="true" data-stream="false"
+data-show-border="true"></div> </div>
+	</div>
+      
+      <div class="col c3">
+	<h2><span>About</span></h2> <p> Please Visit Our wiki group page.... <a
+	href="#">click here...</a></p>
+      </div> <div class="clr"></div>
+    </div>
+  </div>
+
+<div class="footer">
+  <div class="footer_resize">
+    <p class="lf">&copy; Copyright <a href="#">TechEnvaderz Group</a>.</p> <div
+    class="clr"></div>
+  </div>
+</div> </body> </html>

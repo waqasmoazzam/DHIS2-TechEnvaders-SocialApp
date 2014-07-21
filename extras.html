@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>INF5750Social App - Social Pages...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+    <div id="fb-root"></div>
+
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '244275442397389',                        // App ID from the app dashboard
+                channelUrl : 'http://apps.dhis2.org/apps/SocialApp/channel.html', // Channel file for x-domain comms
+                status     : true,                                 // Check Facebook Login status
+                cookie     : true, // enable cookies to allow the server to access the session
+                xfbml      : true                                 // Look for social plugins on the page
+
+                // appId      : '113455642165175', // App ID
+
+            });
+        };
+
+        function facebookLogin() {
+
+            FB.getLoginStatus(function(response) {
+
+                if (response.status === 'connected') {
+                    // connected
+                    getProfileImage();
+
+                } else if (response.status === 'not_authorized') {
+                    //app not_authorized
+                    FB.login(function(response) {
+                        if (response && response.status === 'connected') {
+                            getProfileImage();
+                        }
+                    });
+
+                } else {
+                    // not_logged_in to Facebook
+                    FB.login(function(response) {
+                        if (response && response.status === 'connected') {
+                            getProfileImage();
+                        }
+                    });
+                }
+            });
+        }
+
+        function getProfileImage() {
+
+            var $photo = $('.photo'),
+                    $btn = $('.btn-fb'),
+                    $fbPhoto = $('img.fb-photo');
+
+            //uploading
+            $btn.text('Uploading...');
+
+            FB.api("/me/picture?width=180&height=180",  function(response) {
+
+                var profileImage = response.data.url.split('https://')[1], //remove https to avoid any cert issues
+                        randomNumber = Math.floor(Math.random()*256);
+
+                //remove if there and add image element to dom to show without refresh
+                if( $fbPhoto.length ){
+                    $fbPhoto.remove();
+                }
+                //add random number to reduce the frequency of cached images showing
+                $photo.append('<img class=\"fb-photo img-polaroid\" src=\"http://' + profileImage + '?' + randomNumber + '\">');
+                $btn.addClass('hide');
+            });
+        }
+
+        // Load the SDK Asynchronously
+        (function (d) {
+            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement('script');
+            js.id = id;
+            js.async = true;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            ref.parentNode.insertBefore(js, ref);
+        }(document));
+    </script>
+
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src='snowfall.jquery.js'></script>
+
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function() {
+
+        });
+
+    </script>
+
+    <style>
+
+        #button { padding: .5em 1em; text-decoration: none; }
+        #effect { width: 240px; height: 135px; padding: 0.4em; position: relative; }
+        #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+        .ui-effects-transfer { border: 2px dotted gray; }
+    </style>
+    <script>
+        $(function() {
+            // run the currently selected effect
+            function runEffect() {
+                // get effect type from
+                var selectedEffect = "blind";
+
+                // most effect types need no options passed by default
+                var options = {};
+                // some effects have required parameters
+                if ( selectedEffect === "scale" ) {
+                    options = { percent: 0 };
+                } else if ( selectedEffect === "transfer" ) {
+                    options = { to: "#button", className: "ui-effects-transfer" };
+                } else if ( selectedEffect === "size" ) {
+                    options = { to: { width: 200, height: 60 } };
+                }
+
+                // run the effect
+                $( "#main" ).effect( selectedEffect, options, 2000, callback );
+            };
+
+            // callback function to bring a hidden box back
+            function callback() {
+                setTimeout(function() {
+                    $( "#main" ).removeAttr( "style" ).hide().fadeIn();
+                }, 1000 );
+            };
+
+            // set effect from select menu value
+            $( "#button" ).click(function() {
+                runEffect();
+
+                //try to remove after this....
+                var div = document.getElementById('main');
+                    div.parentNode.removeChild(div);
+
+                //run the snow/..
+                $(document).snowfall({round : true, minSize: 5, maxSize:8}); // add rounded
+                return false;
+            });
+        });
+    </script>
+</head>
+<body  class="darkBg">
+<div class="main" id="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="logo">
+        <h1><a href="#"><span>TechEnvaderz </span>Social</a></h1>
+      </div>
+      <div class="clr"></div>
+        <div class="social-holder">
+            <div class="wrap">
+                <a class="mobile-contact" href="mailto:gurung.sijan@gmail.com?Subject=Hello%20inf5750Social">
+                    <img src="images/social-contact.png"></a>
+                <a class="twitter" href="https://twitter.com/gurungsiz" target="_blank">
+                    <img src="images/social-twitter.png"></a>
+                <a class="facebook" href="https://www.facebook.com/techenvaderz" target="_blank">
+                    <img src="images/social-facebook.png">
+                </a><a class="facebook" href="https://plus.google.com/u/0/+sijangurung/" target="_blank">
+                <img src="images/gplus.png"></a>
+            </div>
+        </div>
+
+      <div class="menu_nav">
+          <ul >
+              <li><a href="index.html"s>Welcome</a></li>
+              <li><a href="viewProfile.html" >Profile</a></li>
+              <li><a href="interpretations.html" >Interpretations</a></li>
+              <li class="active"><a href="extras.html">Extras</a></li>
+          </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="hbg"><img src="images/header_images.jpg" width="90%" height="18%" alt="" /></div>
+    </div>
+    <div class="content" id="content">
+      <div class="content_bg" style="width: 81%; padding: 0 0 0 10%">
+
+        <div class="mainbar" id="mainbar" style="padding: 0 10%; overflow-y: hidden">
+
+        <!-- PUT ALL THE FILES HERE... THIS IS THE MAIN BODY PART.... SIJAN GURUNG MESSAGE -->
+        <form name="post_form" id="formpost" >
+            URL : <input type="text" id="fb_url" name="fb_url" value="" style="width: 90%"/> <br />
+
+            <input type="button" value="Share on FB" onclick="openFbPopUp();"/><br />
+        </form>
+            <button type="button" class="btn-fb">Login with Facebook to upload your photo</button>
+
+            <div class="photo"></div>
+
+            <div class="clr"></div>
+
+
+                <!-- this is for the effect closing....-->
+              <h2>    <a href="#" id="button" class="ui-state-default ui-corner-all">Christmas Mode...</a> </h2>
+
+
+      <!--    <div class="pagenavi"><span class="pages">Page 1 of 2</span><span class="current">1</span><a href="#">2</a><a href="#" >&raquo;</a></div>
+      -->
+</div>
+      </div>
+        <div class="sidebar" style="padding: 0%;">
+
+          <div class="gadget" style="width: 100%">
+
+            <div class="clr"></div>
+          </div>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fbg">
+    <div class="fbg_resize">
+
+        <div class="col c1">
+        <h2><span>Likes</span></h2>
+<div class="fb-like-box" data-href="https://www.facebook.com/techenvaderz" data-width="270" data-height="100" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+</div>
+        </div>
+
+      <div class="col c3">
+        <h2><span>About</span></h2>
+        <p> Please Visit Our wiki group page.... <a href="#">click here...</a></p>
+      </div>
+      <div class="clr"></div>
+    </div>
+<!-- URL IS DYNAMICALLY SET HERE,,,, HOPEFULLY WE CAN ALSO ADD DESCRIPTION ALSO...BUT NOT NEEDED...-->
+        <script type="text/javascript">
+function openFbPopUp() {
+    var fburl = document.getElementById('fb_url').value;
+var url = 'https://www.facebook.com/sharer/sharer.php?u=';
+  url += encodeURIComponent(fburl);
+  window.open(url, 'fbshare', 'width=640,height=320');
+}
+      </script>
+
+<div class="footer">
+  <div class="footer_resize">
+    <p class="lf">&copy; Copyright <a href="#">TechEnvaderz Group</a>.</p>
+    <div class="clr"></div>
+  </div>
+</div>
+<script>
+    (function() {
+
+        $('.btn-fb').on('click', function(e) {
+            e.preventDefault();
+            facebookLogin();
+        });
+    })();
+</script>
+</body>
+</html>

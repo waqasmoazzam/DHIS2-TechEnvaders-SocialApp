@@ -1,0 +1,30 @@
+  .image{
+            width: 35px;
+            height: 35px;
+        }
+
+        #hiddenBox{
+            border: 20px solid;
+            margin: 15px;
+            border-color: #cccccc;
+            display: none;
+        }
+
+        .parentDiv { }
+
+        .parentDiv div{
+            border: 2px solid;
+            margin: 15px;
+            border-color: #cccccc;
+        }
+
+        /*Got this CSS from www.simplesharebuttons.com*/
+        .share-buttons img {
+            width: 35px;
+            padding: 5px;
+            border: 0;
+            box-shadow: 0;
+            display: inline;
+            float: right
+
+        }

@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>INF5750Social App - Social Pages...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<div id="fb-root"></div> 
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '240732082752389',                        // App ID from the app dashboard
+          channelUrl : 'http://localhost:8080/SocialApp/facebook/channel.html', // Channel file for x-domain comms
+          status     : true,                                 // Check Facebook Login status
+         cookie     : true, // enable cookies to allow the server to access the session
+          xfbml      : true                                 // Look for social plugins on the page
+          
+         // appId      : '113455642165175', // App ID
+   
+        });
+        // Additional initialization code such as adding Event Listeners goes here
+    }; 
+// Load the SDK Asynchronously
+     (function(d){
+         var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement('script'); js.id = id; js.async = true;
+         js.src = "//connect.facebook.net/en_US/all.js";
+         ref.parentNode.insertBefore(js, ref);
+         }(document));
+</script>
+
+</head>
+<body>
+<div class="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="logo">
+        <h1><a href="#"><span>TechEnvaderz </span>Social</a></h1>
+      </div>
+      <div class="clr"></div>
+        <div class="social-holder">
+            <div class="wrap">
+                <a class="mobile-contact" href="mailto:gurung.sijan@gmail.com?Subject=Hello%20inf5750Social">
+                    <img src="images/social-contact.png"></a>
+                <a class="twitter" href="https://twitter.com/gurungsiz" target="_blank">
+                    <img src="images/social-twitter.png"></a>
+                <a class="facebook" href="https://www.facebook.com/techenvaderz" target="_blank">
+                    <img src="images/social-facebook.png">
+                </a><a class="facebook" href="https://plus.google.com/u/0/+sijangurung/" target="_blank">
+                <img src="images/gplus.png"></a>
+            </div>
+        </div>
+
+      <div class="menu_nav">
+          <ul >
+              <li><a href="index.html"s>Welcome</a></li>
+              <li><a href="viewProfile.html" >Profile</a></li>
+              <li><a href="interpretations.html" >Interpretations</a></li>
+              <li class="active"><a href="facebook.html">Other Social Media</a></li>
+          </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="hbg"><img src="images/header_images.jpg" width="90%" height="18%" alt="" /></div>
+    </div>
+    <div class="content" id="content">
+      <div class="content_bg" style="width: 81%; padding: 0 0 0 10%">
+
+        <div class="mainbar" id="mainbar" style="padding: 0 10%; overflow-y:hidden">
+            
+        <!-- PUT ALL THE FILES HERE... THIS IS THE MAIN BODY PART.... SIJAN GURUNG MESSAGE -->
+    
+        <form name="post_form" id="formpost" >
+            URL : <input type="text" id="fb_url" name="fb_url" value="" style="width: 90%"/> <br />
+
+            <input type="button" value="Share on FB" onclick="openFbPopUp();"/><br />
+        </form>
+            
+          
+                  
+          
+      <!--    <div class="pagenavi"><span class="pages">Page 1 of 2</span><span class="current">1</span><a href="#">2</a><a href="#" >&raquo;</a></div>
+      -->
+</div>
+      </div>
+        <div class="sidebar" style="padding: 0%;">
+
+          <div class="gadget" style="width: 100%">
+
+            <div class="clr"></div>
+          </div>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+  <div class="fbg">
+    <div class="fbg_resize">
+        
+        <div class="col c1">
+        <h2><span>Likes</span></h2>
+<div class="fb-like-box" data-href="https://www.facebook.com/techenvaderz" data-width="270" data-height="100" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>    
+</div>
+        </div>
+      
+      <div class="col c3">
+        <h2><span>About</span></h2>
+        <p> Please Visit Our wiki group page.... <a href="#">click here...</a></p>
+      </div>
+      <div class="clr"></div>
+    </div>
+<!-- URL IS DYNAMICALLY SET HERE,,,, HOPEFULLY WE CAN ALSO ADD DESCRIPTION ALSO...BUT NOT NEEDED...-->
+        <script type="text/javascript">
+function openFbPopUp() {
+    var fburl = document.getElementById('fb_url').value;
+var url = 'https://www.facebook.com/sharer/sharer.php?u=';
+  url += encodeURIComponent(fburl);
+  window.open(url, 'fbshare', 'width=640,height=320');
+}
+      </script>       
+
+<div class="footer">
+  <div class="footer_resize">
+    <p class="lf">&copy; Copyright <a href="#">TechEnvaderz Group</a>.</p>
+    <div class="clr"></div>
+  </div>
+</div>
+</body>
+</html>
